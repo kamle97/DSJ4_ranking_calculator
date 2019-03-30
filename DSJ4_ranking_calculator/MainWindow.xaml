@@ -5,8 +5,72 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DSJ4_ranking_calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="DSJ4 Ranking Calculator" WindowState="Maximized" ResizeMode="NoResize">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="0"/>
+            <GradientStop Color="#FF0F00FF" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        
+        <TextBox Name="PathText" IsEnabled="False" HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button Content="Przegladaj..." Click="ChooseDirectory"  HorizontalAlignment="Right" Height="20" Margin="0,10,140,0" VerticalAlignment="Top" Width="100" Background="DarkSlateBlue" Foreground="White" />
+        <Button Content="Generuj statystyki" Click="GenerateStats"  HorizontalAlignment="Right" Height="20" Margin="0,10,10,0" VerticalAlignment="Top" Width="120" Background="DarkSlateBlue" Foreground="White"/>
+        <TextBox Name="Stats" FontFamily="Consolas" HorizontalAlignment="Left" Margin="170,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Background="Transparent" Foreground="LightCyan" FontSize="20"/>
+
+        <Button Name="WorldCupButton" Click="ShowWorldCupHandler"  HorizontalAlignment="Left" Height="50" Margin="10,100,0,0" Background="MidnightBlue" VerticalAlignment="Top" Width="150" Foreground="White" IsEnabled="False">
+            <TextBlock TextAlignment="Center" FontWeight="Bold" Foreground="White" >Puchar<LineBreak/>Świata</TextBlock>
+        </Button>
+        <Button Name="FourHillsButton" Click="ShowFourHills"  HorizontalAlignment="Left" Height="50" Margin="10,160,0,0" VerticalAlignment="Top" Width="150" Foreground="White" IsEnabled="False">
+            <TextBlock TextAlignment="Center" FontWeight="Bold">Turniej<LineBreak/>Czterech<LineBreak/>Skoczni</TextBlock>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="DarkBlue" Offset="0"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Name="RawAirButton"  Click="ShowRawAir" HorizontalAlignment="Left" Height="50" Margin="10,220,0,0" VerticalAlignment="Top" Width="150" Foreground="White" IsEnabled="False">
+            <TextBlock TextAlignment="Center" FontWeight="Bold" Foreground="White">RawAir</TextBlock>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Name="Willingen5Button"  Click="ShowW5" HorizontalAlignment="Left" Height="50" Margin="10,280,0,0" VerticalAlignment="Top" Width="150" Foreground="White" IsEnabled="False">
+            <TextBlock TextAlignment="Center" FontWeight="Bold" Foreground="White">Willingen 5</TextBlock>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Red" Offset="0.5"/>
+                    <GradientStop Color="Yellow" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Name="Planica7Button" Click="ShowP7" HorizontalAlignment="Left" Height="50" Margin="10,340,0,0" VerticalAlignment="Top" Width="150" Foreground="White" IsEnabled="False">
+            <TextBlock TextAlignment="Center" FontWeight="Bold" Foreground="White">Planica 7</TextBlock>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="Blue" Offset="0.5"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Name="FlyingCupButton" Click="ShowFlyingCup" HorizontalAlignment="Left" Height="50" Margin="10,400,0,0" Background="MidnightBlue" VerticalAlignment="Top" Width="150" Foreground="White" IsEnabled="False">
+            <TextBlock TextAlignment="Center" FontWeight="Bold" Foreground="White" >Puchar Świata<LineBreak/>w Lotach Narciarskich</TextBlock>
+        </Button>
+        <Button Name="NormalCupButton" Click="ShowNormalHills" HorizontalAlignment="Left" Height="50" Margin="10,460,0,0" Background="MidnightBlue" VerticalAlignment="Top" Width="150" Foreground="White" IsEnabled="False">
+            <TextBlock TextAlignment="Center" FontWeight="Bold" Foreground="White" >Puchar Świata<LineBreak/>Skocznie Normalne</TextBlock>
+        </Button>
+        <Button Name="TeamCupButton"  Click="ShowTeamCup" HorizontalAlignment="Left" Height="50" Margin="10,520,0,0" Background="MidnightBlue" VerticalAlignment="Top" Width="150" Foreground="White" IsEnabled="False">
+            <TextBlock TextAlignment="Center" FontWeight="Bold" Foreground="White" >Puchar Narodów</TextBlock>
+        </Button>
+        <Button Name="LongestDistanceButton"  Click="ShowDistances" HorizontalAlignment="Left" Height="50" Margin="10,580,0,0" Background="DarkOrange" VerticalAlignment="Top" Width="150" Foreground="White" IsEnabled="False">
+            <TextBlock TextAlignment="Center" FontWeight="Bold" Foreground="White" >Najdłuższa odległość</TextBlock>
+        </Button>
+        <Image Name="Image" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="150"/>
     </Grid>
 </Window>
